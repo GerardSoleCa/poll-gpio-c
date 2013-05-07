@@ -40,8 +40,7 @@
  ****************************************************************/
  
 #define SYSFS_GPIO_DIR "/sys/class/gpio"
-//#define POLL_TIMEOUT (3 * 1000) /* 3 seconds */
- #define POLL_TIMEOUT (-1) /* 3 seconds */
+#define POLL_TIMEOUT (-1) /* 3 seconds */
 #define MAX_BUF 64
 
 /****************************************************************
@@ -275,7 +274,7 @@ int main(int argc, char **argv, char **envp)
       (void)read(fdset[0].fd, buf, 1);
       printf("\npoll() stdin read 0x%2.2X\n", (unsigned int) buf[0]);
     }
-count++;
+    count++;
     fflush(stdout);
   }
 
